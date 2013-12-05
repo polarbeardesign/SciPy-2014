@@ -11,9 +11,7 @@ if "GONDOR_DATABASE_URL" in os.environ:
     url = urlparse.urlparse(os.environ["GONDOR_DATABASE_URL"])
     DATABASES = {
         "default": {
-            "ENGINE": {
-                "postgres": "django.db.backends.postgresql_psycopg2"
-            }[url.scheme],
+            "ENGINE": "django.db.backends.mysql",
             "NAME": url.path[1:],
             "USER": url.username,
             "PASSWORD": url.password,
